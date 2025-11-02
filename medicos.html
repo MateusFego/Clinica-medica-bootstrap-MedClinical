@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-br"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Med Clinical | Médicos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css"> 
+</head>
+
+<body>
+
+    <div class="d-flex" id="wrapper">
+        <div class="sidebar-wrapper bg-dark text-white d-flex flex-column" id="sidebar-wrapper">
+            <div class="sidebar-heading p-4 mb-3 d-flex align-items-center">
+                <i class="bi bi-crosshair text-info fs-4 me-2"></i>
+                <h2 class="h5 mb-0">Med Clinical</h2>
+            </div>
+            
+            <div class="list-group list-group-flush flex-grow-1" id="nav-menu">
+                <a href="dashboard.html" class="list-group-item list-group-item-action py-3" data-page="dashboard">
+                    <i class="bi bi-speedometer2 me-2"></i> Dashboard
+                </a>
+                <a href="consultas.html" class="list-group-item list-group-item-action py-3" data-page="consultas">
+                    <i class="bi bi-calendar-check me-2"></i> Consultas
+                </a>
+                <a href="pacientes.html" class="list-group-item list-group-item-action py-3" data-page="pacientes">
+                    <i class="bi bi-people me-2"></i> Pacientes
+                </a>
+                <a href="medicos.html" class="list-group-item list-group-item-action py-3 active" data-page="medicos">
+                    <i class="bi bi-person-badge me-2"></i> Médicos
+                </a>
+                <a href="configuracoes.html" class="list-group-item list-group-item-action py-3" data-page="configuracoes">
+                    <i class="bi bi-gear me-2"></i> Configurações
+                </a>
+            </div>
+
+            <div class="mt-auto p-4">
+                <a href="index.html" class="list-group-item list-group-item-action text-white-50">
+                    <i class="bi bi-box-arrow-left me-2"></i> Sair
+                </a>
+            </div>
+        </div>
+
+        <div id="page-content-wrapper" class="flex-grow-1 p-4">
+            
+            <header class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h1 class="text-white">Médicos</h1>
+                    <p class="text-secondary">Gerencie a equipe médica da clínica</p>
+                </div>
+                <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#novoMedicoModal">
+                    <i class="bi bi-plus-lg me-2"></i> Novo Médico
+                </button>
+            </header>
+
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="medicosGrid">
+                
+                <div class="col" data-medico-id="M001" data-medico-nome="Dr. João Santos" data-crm="12345/SP" data-especialidade="Clínico Geral" data-telefone="(11) 99876-5432" data-horario="Seg-Sex: 8h-16h" data-status="Disponível">
+                    <div class="card h-100 p-3 shadow-sm text-dark bg-white">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="avatar bg-primary text-white me-3">JS</div>
+                                <div>
+                                    <h5 class="mb-0 fw-bold">Dr. João Santos</h5>
+                                    <p class="mb-0 small text-muted">Clínico Geral</p>
+                                    <p class="mb-0 small text-muted">CRM 12345/SP</p>
+                                </div>
+                            </div>
+
+                            <span class="badge bg-success-subtle text-success mb-3 fw-bold p-2">Disponível</span>
+                            
+                            <ul class="list-unstyled small mb-3">
+                                <li class="mb-1"><i class="bi bi-phone me-2"></i> (11) 99876-5432</li>
+                                <li class="mb-1"><i class="bi bi-envelope me-2"></i> joao.santos@clinica.com</li>
+                                <li class="mb-1"><i class="bi bi-clock me-2"></i> Seg-Sex: 8h-16h</li>
+                            </ul>
+                            
+                            <p class="mb-2 small">Consultas hoje: **8 agendamentos**</p>
+                            
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-sm btn-outline-info btn-ver-agenda">Ver Agenda</button>
+                                <button class="btn btn-sm btn-outline-secondary btn-editar-medico" data-bs-toggle="modal" data-bs-target="#editarMedicoModal">Editar</button>
+                                <button class="btn btn-sm btn-outline-danger btn-excluir-medico" data-bs-toggle="modal" data-bs-target="#excluirMedicoModal">Excluir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col" data-medico-id="M002" data-medico-nome="Dra. Ana Costa" data-crm="23456/SP" data-especialidade="Cardiologia" data-telefone="(11) 99876-5433" data-horario="Seg-Qua-Sex: 9h-17h" data-status="Ocupado">
+                    <div class="card h-100 p-3 shadow-sm text-dark bg-white">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="avatar bg-danger text-white me-3">AC</div>
+                                <div>
+                                    <h5 class="mb-0 fw-bold">Dra. Ana Costa</h5>
+                                    <p class="mb-0 small text-muted">Cardiologia</p>
+                                    <p class="mb-0 small text-muted">CRM 23456/SP</p>
+                                </div>
+                            </div>
+                            
+                            <span class="badge bg-warning-subtle text-warning mb-3 fw-bold p-2">Ocupado</span>
+                            
+                            <ul class="list-unstyled small mb-3">
+                                <li class="mb-1"><i class="bi bi-phone me-2"></i> (11) 99876-5433</li>
+                                <li class="mb-1"><i class="bi bi-envelope me-2"></i> ana.costa@clinica.com</li>
+                                <li class="mb-1"><i class="bi bi-clock me-2"></i> Seg-Qua-Sex: 9h-17h</li>
+                            </ul>
+                            
+                            <p class="mb-2 small">Consultas hoje: **6 agendamentos**</p>
+                            
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-sm btn-outline-info btn-ver-agenda">Ver Agenda</button>
+                                <button class="btn btn-sm btn-outline-secondary btn-editar-medico" data-bs-toggle="modal" data-bs-target="#editarMedicoModal">Editar</button>
+                                <button class="btn btn-sm btn-outline-danger btn-excluir-medico" data-bs-toggle="modal" data-bs-target="#excluirMedicoModal">Excluir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col" data-medico-id="M003" data-medico-nome="Dr. Pedro Alves" data-crm="34567/SP" data-especialidade="Pediatria" data-telefone="(11) 99876-5434" data-horario="Ter-Qui-Sab: 8h-14h" data-status="Disponível">
+                    <div class="card h-100 p-3 shadow-sm text-dark bg-white">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="avatar bg-info text-white me-3">PA</div>
+                                <div>
+                                    <h5 class="mb-0 fw-bold">Dr. Pedro Alves</h5>
+                                    <p class="mb-0 small text-muted">Pediatria</p>
+                                    <p class="mb-0 small text-muted">CRM 34567/SP</p>
+                                </div>
+                            </div>
+                            
+                            <span class="badge bg-success-subtle text-success mb-3 fw-bold p-2">Disponível</span>
+                            
+                            <ul class="list-unstyled small mb-3">
+                                <li class="mb-1"><i class="bi bi-phone me-2"></i> (11) 99876-5434</li>
+                                <li class="mb-1"><i class="bi bi-envelope me-2"></i> pedro.alves@clinica.com</li>
+                                <li class="mb-1"><i class="bi bi-clock me-2"></i> Ter-Qui-Sab: 8h-14h</li>
+                            </ul>
+                            
+                            <p class="mb-2 small">Consultas hoje: **5 agendamentos**</p>
+                            
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-sm btn-outline-info btn-ver-agenda">Ver Agenda</button>
+                                <button class="btn btn-sm btn-outline-secondary btn-editar-medico" data-bs-toggle="modal" data-bs-target="#editarMedicoModal">Editar</button>
+                                <button class="btn btn-sm btn-outline-danger btn-excluir-medico" data-bs-toggle="modal" data-bs-target="#excluirMedicoModal">Excluir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> </div>
+    </div>
+    
+    <div class="modal fade" id="novoMedicoModal" tabindex="-1" aria-labelledby="novoMedicoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md modal-dialog-centered">
+            <div class="modal-content text-dark bg-white" data-bs-theme="light"> 
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title fw-bold" id="novoMedicoModalLabel">Adicionar Novo Médico</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body pt-0">
+                    <form id="novoMedicoForm">
+                        <div class="row mb-3">
+                            <div class="col-md-6 mb-3">
+                                <label for="medicoNomeCompleto" class="form-label fw-bold">Nome Completo</label>
+                                <input type="text" class="form-control form-control-lg" id="medicoNomeCompleto" placeholder="Digite o nome completo" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="medicoEspecialidade" class="form-label fw-bold">Especialidade</label>
+                                <input type="text" class="form-control form-control-lg" id="medicoEspecialidade" placeholder="Digite a especialidade" required>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6 mb-3">
+                                <label for="medicoCRM" class="form-label fw-bold">CRM</label>
+                                <input type="text" class="form-control form-control-lg" id="medicoCRM" placeholder="CRM 00000/UF" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="medicoTelefone" class="form-label fw-bold">Telefone</label>
+                                <input type="tel" class="form-control form-control-lg" id="medicoTelefone" placeholder="(00) 00000-0000" required>
+                            </div>
+                        </div>
+
+                        <div class="row mb-4">
+                            <div class="col-md-6 mb-3">
+                                <label for="medicoEmail" class="form-label fw-bold">Email</label>
+                                <input type="email" class="form-control form-control-lg" id="medicoEmail" placeholder="email@exemplo.com" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="medicoHorario" class="form-label fw-bold">Horário de Atendimento</label>
+                                <input type="text" class="form-control form-control-lg" id="medicoHorario" placeholder="Ex: Seg-Sex: 8h-16h" required>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-end gap-3">
+                            <button type="button" class="btn btn-outline-secondary px-4" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-dark px-4">Salvar Médico</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="editarMedicoModal" tabindex="-1" aria-labelledby="editarMedicoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content text-dark bg-white" data-bs-theme="light"> 
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title fw-bold" id="editarMedicoModalLabel">Editar Cadastro de Médico</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body pt-0">
+                    <form id="edicaoMedicoForm">
+                        <input type="hidden" id="medicoIdEdit">
+                        <div class="row mb-3">
+                            <div class="col-md-6 mb-3">
+                                <label for="medicoNomeEdit" class="form-label fw-bold">Nome Completo</label>
+                                <input type="text" class="form-control form-control-lg" id="medicoNomeEdit" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="medicoEspecialidadeEdit" class="form-label fw-bold">Especialidade</label>
+                                <input type="text" class="form-control form-control-lg" id="medicoEspecialidadeEdit" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6 mb-3">
+                                <label for="medicoCRMEdit" class="form-label fw-bold">CRM</label>
+                                <input type="text" class="form-control form-control-lg" id="medicoCRMEdit" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="medicoTelefoneEdit" class="form-label fw-bold">Telefone</label>
+                                <input type="tel" class="form-control form-control-lg" id="medicoTelefoneEdit" required>
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <div class="col-md-6 mb-3">
+                                <label for="medicoEmailEdit" class="form-label fw-bold">Email</label>
+                                <input type="email" class="form-control form-control-lg" id="medicoEmailEdit" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="medicoHorarioEdit" class="form-label fw-bold">Horário de Atendimento</label>
+                                <input type="text" class="form-control form-control-lg" id="medicoHorarioEdit" required>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-end gap-3">
+                            <button type="button" class="btn btn-outline-secondary px-4" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-dark px-4">Salvar Alterações</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="excluirMedicoModal" tabindex="-1" aria-labelledby="excluirMedicoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm modal-dialog-centered">
+            <div class="modal-content text-dark bg-white" data-bs-theme="light"> 
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold" id="excluirMedicoModalLabel">Confirmar Exclusão</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Tem certeza que deseja **excluir** o médico <span id="medico-nome-excluir" class="fw-bold"></span>?</p>
+                    <p class="text-danger small">Todas as consultas e registros ligados a este médico serão afetados.</p>
+                    <div class="d-flex justify-content-end gap-2">
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Não, Manter</button>
+                        <button type="button" class="btn btn-danger" id="confirmarExclusaoMedico">Sim, Excluir</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script> 
+</body>
+</html>

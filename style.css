@@ -1,0 +1,218 @@
+/*
+ * style.css
+ * Configurações de estilo personalizadas para Med Clinical
+ * Tema: Dark Mode principal com Light Mode no conteúdo de Consultas/Pacientes/Médicos/Configurações.
+ */
+
+/* ======================================================= */
+/* 0. AJUSTE GERAL DE FONTE E DENSIDADE DO CONTEÚDO PRINCIPAL */
+/* ======================================================= */
+
+/* Reduz o tamanho da fonte base para compactar o CONTEÚDO PRINCIPAL (LADO DIREITO) */
+#page-content-wrapper {
+    font-size: 0.95rem; 
+}
+/* Mantém o menu lateral com o tamanho base padrão do Bootstrap (1rem) */
+#sidebar-wrapper {
+    font-size: 1rem; 
+}
+
+/* Reduz o tamanho da fonte para os títulos e métricas no Dashboard/Conteúdo */
+#page-content-wrapper .card .display-6 {
+    font-size: 2.4rem !important; /* Ligeira redução */
+}
+#page-content-wrapper .card .h5, #page-content-wrapper .card h5 {
+    font-size: 1.1rem !important; 
+}
+#page-content-wrapper .card .h6, #page-content-wrapper .card h6 {
+    font-size: 0.85rem !important; 
+}
+/* Reduz o padding dos cards de métricas (p-3 vira p-2) */
+#page-content-wrapper .card {
+    padding: 0.75rem !important;
+}
+
+
+/* ======================================================= */
+/* 1. VARIÁVEIS, CORES E LEGIBILIDADE GLOBAL */
+/* ======================================================= */
+
+:root {
+    /* Cor roxa personalizada para "Médicos Ativos" */
+    --bs-purple: #8f00ff; 
+    /* Cor do fundo do Sidebar */
+    --sidebar-bg-dark: #0d1117;
+}
+
+.text-purple {
+    color: var(--bs-purple) !important;
+}
+
+/* Fundo Geral: Dark Mode para index/dashboard (definido pelo data-bs-theme="dark") */
+body[data-bs-theme="dark"] {
+    background-color: var(--bs-body-bg); 
+}
+/* Fundo para as demais páginas (sem data-bs-theme) */
+body:not([data-bs-theme="dark"]) {
+    background-color: var(--bs-white); 
+}
+
+/* Garante que os Cards sejam brancos em qualquer tema */
+.card {
+    background-color: white !important; 
+    color: var(--bs-dark) !important; 
+}
+
+/* * AJUSTE DE LEGIBILIDADE * *
+ * Força cores escuras em textos leves (muted, secondary) dentro de cards CLAROS
+ */
+.card .text-muted, 
+.card .text-secondary,
+.card .card-subtitle,
+.card .form-label.text-muted {
+    color: #6c757d !important;
+}
+
+.card .small {
+    color: #495057 !important;
+}
+
+/* Ajuste nos inputs no Login e Modal (cor de fundo cinza nos ícones/addons) */
+.input-group-text {
+    background-color: var(--bs-gray-200); 
+    color: var(--bs-dark);
+}
+
+/* Estilo para o Avatar Redondo (Iniciais dos Médicos) */
+.avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+
+/* ======================================================= */
+/* 2. SIDEBAR STYLES (REVERTIDO PARA O TAMANHO ORIGINAL) */
+/* ======================================================= */
+
+#sidebar-wrapper {
+    min-height: 100vh;
+    width: 250px; 
+    background-color: var(--sidebar-bg-dark) !important; 
+    position: fixed; 
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* PADDING ORIGINAL (py-3) */
+.sidebar-wrapper .list-group-item {
+    padding-top: 0.75rem !important; 
+    padding-bottom: 0.75rem !important;
+    background-color: var(--sidebar-bg-dark);
+    color: #fff !important; 
+    border: none;
+    border-left: 5px solid transparent; 
+    transition: all 0.2s;
+}
+/* Cabeçalho do Sidebar (p-4 mb-3) */
+.sidebar-wrapper .sidebar-heading {
+    padding: 1.5rem !important;
+    margin-bottom: 1rem !important;
+}
+
+.sidebar-wrapper .list-group-item.active {
+    background-color: var(--bs-primary) !important; 
+    color: #fff !important;
+    font-weight: bold;
+    border-left: 5px solid var(--bs-primary); 
+}
+
+.sidebar-wrapper .list-group-item:hover {
+    background-color: rgba(255, 255, 255, 0.1); 
+    color: #fff !important;
+}
+
+/* Conteúdo Principal */
+#page-content-wrapper {
+    margin-left: 250px; 
+    padding-top: 20px;
+}
+
+/* Títulos do Conteúdo (Para páginas CLARAS) */
+html:not([data-bs-theme="dark"]) #page-content-wrapper .text-white,
+html:not([data-bs-theme="dark"]) #page-content-wrapper h1,
+html:not([data-bs-theme="dark"]) #page-content-wrapper h5 {
+    color: var(--bs-dark) !important;
+}
+
+
+/* ======================================================= */
+/* 3. MODAIS (Consultas, Pacientes, Médicos) - CORREÇÃO DE CORTE */
+/* ======================================================= */
+
+/* Reduz o tamanho do modal de lg para md */
+#novaConsultaModal .modal-dialog,
+#novoPacienteModal .modal-dialog,
+#novoMedicoModal .modal-dialog {
+    max-width: 600px !important; 
+}
+
+/* ** CORREÇÃO DE TEXTO CORTADO NO PLACEHOLDER ** */
+#novaConsultaModal .form-select-lg,
+#novaConsultaModal .input-group-lg > .form-control,
+#novoPacienteModal .form-control-lg, 
+#novoMedicoModal .form-control-lg { 
+    padding: 0.6rem 1rem; /* Aumenta padding vertical para evitar corte */
+    height: auto;        
+    min-height: calc(2.4rem + 2px); /* Garante altura mínima para acomodar o texto */
+    font-size: 0.95rem; 
+}
+/* FIM DA CORREÇÃO DE CORTE */
+
+/* Reduz o padding dos botões de ação e margem inferior do formulário */
+#novaConsultaModal .btn-lg,
+#novoPacienteModal .btn-lg,
+#novoMedicoModal .btn-lg {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+}
+#novaConsultaModal .mb-3,
+#novoPacienteModal .mb-3,
+#novoMedicoModal .mb-3 {
+    margin-bottom: 0.8rem !important; 
+}
+
+
+/* ======================================================= */
+/* 4. ESTRUTURA DE GRÁFICOS (Placeholder Limpo) */
+/* ======================================================= */
+
+.chart-placeholder-clean {
+    height: 200px; 
+    background-color: #f8f9fa; 
+    border-radius: 5px;
+    border: 1px solid #dee2e6;
+}
+
+/* ======================================================= */
+/* 5. RESPONSIVIDADE */
+/* ======================================================= */
+
+@media (max-width: 768px) {
+    #sidebar-wrapper {
+        width: 100%;
+        position: relative;
+        min-height: auto;
+    }
+    #page-content-wrapper {
+        margin-left: 0;
+        padding-top: 10px;
+    }
+}

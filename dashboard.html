@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Med Clinical | Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css"> 
+</head>
+
+<body>
+
+    <div class="d-flex" id="wrapper">
+        <div class="sidebar-wrapper bg-dark text-white d-flex flex-column" id="sidebar-wrapper">
+            <div class="sidebar-heading p-4 mb-3 d-flex align-items-center">
+                <i class="bi bi-crosshair text-info fs-4 me-2"></i>
+                <h2 class="h5 mb-0">Med Clinical</h2>
+            </div>
+            
+            <div class="list-group list-group-flush flex-grow-1" id="nav-menu">
+                <a href="dashboard.html" class="list-group-item list-group-item-action py-3 active" data-page="dashboard">
+                    <i class="bi bi-speedometer2 me-2"></i> Dashboard
+                </a>
+                <a href="consultas.html" class="list-group-item list-group-item-action py-3" data-page="consultas">
+                    <i class="bi bi-calendar-check me-2"></i> Consultas
+                </a>
+                <a href="pacientes.html" class="list-group-item list-group-item-action py-3" data-page="pacientes">
+                    <i class="bi bi-people me-2"></i> Pacientes
+                </a>
+                <a href="medicos.html" class="list-group-item list-group-item-action py-3" data-page="medicos">
+                    <i class="bi bi-person-badge me-2"></i> Médicos
+                </a>
+                <a href="configuracoes.html" class="list-group-item list-group-item-action py-3" data-page="configuracoes">
+                     <i class="bi bi-gear me-2"></i> Configurações
+                </a>
+            </div>
+
+            <div class="mt-auto p-4">
+                <a href="index.html" class="list-group-item list-group-item-action text-white-50">
+                    <i class="bi bi-box-arrow-left me-2"></i> Sair
+                </a>
+            </div>
+        </div>
+
+        <div id="page-content-wrapper" class="flex-grow-1 p-4">
+            
+            <header class="mb-4">
+                <h1 class="text-white">Dashboard</h1>
+                <p class="text-secondary">Visão geral da clínica</p>
+            </header>
+
+            <div class="row mb-5 gy-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 p-3 shadow-sm text-dark bg-white">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <h6 class="card-subtitle mb-2 text-muted">Total de Pacientes</h6>
+                                <i class="bi bi-people text-primary fs-5"></i>
+                            </div>
+                            <h2 class="card-title display-6 fw-bold mb-1">1,234</h2>
+                            <p class="card-text small text-success">
+                                <i class="bi bi-arrow-up"></i> +12% em relação ao mês anterior
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 p-3 shadow-sm text-dark bg-white">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <h6 class="card-subtitle mb-2 text-muted">Consultas Hoje</h6>
+                                <i class="bi bi-calendar-check text-success fs-5"></i>
+                            </div>
+                            <h2 class="card-title display-6 fw-bold mb-1">24</h2>
+                            <p class="card-text small text-muted">
+                                8 concluídas, 16 pendentes
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 p-3 shadow-sm text-dark bg-white">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <h6 class="card-subtitle mb-2 text-muted">Médicos Ativos</h6>
+                                <i class="bi bi-heart-pulse text-purple fs-5"></i>
+                            </div>
+                            <h2 class="card-title display-6 fw-bold mb-1">18</h2>
+                            <p class="card-text small text-muted">
+                                Em 7 especialidades
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 p-3 shadow-sm text-dark bg-white">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <h6 class="card-subtitle mb-2 text-muted">Taxa de Crescimento</h6>
+                                <i class="bi bi-graph-up-arrow text-danger fs-5"></i>
+                            </div>
+                            <h2 class="card-title display-6 fw-bold mb-1">+23%</h2>
+                            <p class="card-text small text-muted">
+                                Últimos 6 meses
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-5 gy-4">
+    
+    <div class="col-lg-6">
+        <div class="card h-100 p-3 shadow-sm text-dark bg-white">
+            <div class="card-body">
+                <h6 class="card-title fw-bold mb-4">Consultas Mensais</h6>
+                <div class="chart-placeholder-clean">
+                    <p class="text-center text-secondary-emphasis pt-5 mt-5">Gráfico de Barras simulado aqui.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <div class="card h-100 p-3 shadow-sm text-dark bg-white">
+            <div class="card-body">
+                <h6 class="card-title fw-bold mb-4">Novos Pacientes</h6>
+                <div class="chart-placeholder-clean">
+                    <p class="text-center text-secondary-emphasis pt-5 mt-5">Gráfico de Linhas simulado aqui.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+            <div class="row">
+                <div class="col-12">
+                    <h5 class="text-white mb-3">Próximas Consultas de Hoje</h5>
+                    <div class="card p-3 shadow-sm text-dark bg-white">
+                        <div class="card-body p-0">
+                            <div class="list-group-item d-flex justify-content-between align-items-center py-3 border-bottom">
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-calendar-check text-muted fs-4 me-3"></i>
+                                    <div>
+                                        <p class="mb-0 fw-bold">Maria Silva</p>
+                                        <p class="mb-0 small text-muted">Dr. João Santos - Consulta Geral</p>
+                                    </div>
+                                </div>
+                                <span class="badge bg-success-subtle text-success py-2 px-3">09:00</span>
+                            </div>
+                            <div class="list-group-item d-flex justify-content-between align-items-center py-3">
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-calendar-check text-muted fs-4 me-3"></i>
+                                    <div>
+                                        <p class="mb-0 fw-bold">Carlos Alencar</p>
+                                        <p class="mb-0 small text-muted">Dr. Ana Souza - Cardiologia</p>
+                                    </div>
+                                </div>
+                                <span class="badge bg-warning-subtle text-warning py-2 px-3">10:30</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script> </body>
+</html>

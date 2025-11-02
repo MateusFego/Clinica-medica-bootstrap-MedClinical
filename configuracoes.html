@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-br"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Med Clinical | Configurações</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css"> 
+</head>
+
+<body>
+
+    <div class="d-flex" id="wrapper">
+        <div class="sidebar-wrapper bg-dark text-white d-flex flex-column" id="sidebar-wrapper">
+            <div class="sidebar-heading p-4 mb-3 d-flex align-items-center">
+                <i class="bi bi-crosshair text-info fs-4 me-2"></i>
+                <h2 class="h5 mb-0">Med Clinical</h2>
+            </div>
+            
+            <div class="list-group list-group-flush flex-grow-1" id="nav-menu">
+                <a href="dashboard.html" class="list-group-item list-group-item-action py-3" data-page="dashboard">
+                    <i class="bi bi-speedometer2 me-2"></i> Dashboard
+                </a>
+                <a href="consultas.html" class="list-group-item list-group-item-action py-3" data-page="consultas">
+                    <i class="bi bi-calendar-check me-2"></i> Consultas
+                </a>
+                <a href="pacientes.html" class="list-group-item list-group-item-action py-3" data-page="pacientes">
+                    <i class="bi bi-people me-2"></i> Pacientes
+                </a>
+                <a href="medicos.html" class="list-group-item list-group-item-action py-3" data-page="medicos">
+                    <i class="bi bi-person-badge me-2"></i> Médicos
+                </a>
+                <a href="configuracoes.html" class="list-group-item list-group-item-action py-3 active" data-page="configuracoes">
+                    <i class="bi bi-gear me-2"></i> Configurações
+                </a>
+            </div>
+
+            <div class="mt-auto p-4">
+                <a href="index.html" class="list-group-item list-group-item-action text-white-50">
+                    <i class="bi bi-box-arrow-left me-2"></i> Sair
+                </a>
+            </div>
+        </div>
+
+        <div id="page-content-wrapper" class="flex-grow-1 p-4">
+            
+            <header class="mb-4">
+                <h1 class="text-white">Configurações</h1>
+                <p class="text-secondary">Gerencie as configurações da clínica</p>
+            </header>
+
+            <div class="card p-4 shadow-sm text-dark bg-white">
+                
+                <div class="mb-5">
+                    <h5 class="fw-bold mb-3"><i class="bi bi-info-circle me-2"></i> Informações da Clínica</h5>
+                    <form id="infoClinicaForm">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="nomeClinica" class="form-label small fw-bold text-muted">Nome da Clínica</label>
+                                <input type="text" class="form-control bg-light border-0" id="nomeClinica" value="Med Clinical" disabled>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="cnpj" class="form-label small fw-bold text-muted">CNPJ</label>
+                                <input type="text" class="form-control bg-light border-0" id="cnpj" value="00.000.000/0000-00" disabled>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="telefone" class="form-label small fw-bold text-muted">Telefone</label>
+                                <input type="tel" class="form-control bg-light border-0" id="telefone" value="(11) 3000-0000">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email" class="form-label small fw-bold text-muted">Email</label>
+                                <input type="email" class="form-control bg-light border-0" id="email" value="contato@clinica.com">
+                            </div>
+
+                            <div class="col-12">
+                                <label for="endereco" class="form-label small fw-bold text-muted">Endereço</label>
+                                <input type="text" class="form-control bg-light border-0" id="endereco" value="Rua Exemplo, 123 - São Paulo, SP">
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-end mt-4">
+                            <button type="submit" class="btn btn-dark px-4" id="salvarInfoClinica">Salvar Alterações</button>
+                        </div>
+                    </form>
+                </div>
+
+                <hr class="mb-5">
+
+                <div class="mb-5">
+                    <h5 class="fw-bold mb-4"><i class="bi bi-bell me-2"></i> Notificações</h5>
+                    
+                    <div class="row align-items-center mb-3">
+                        <div class="col-md-10">
+                            <label class="form-label fw-normal mb-0">Lembrete de consultas</label>
+                            <p class="small text-muted mb-0">Enviar lembrete por email 24h antes</p>
+                        </div>
+                        <div class="col-md-2 d-flex justify-content-end">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch" id="lembreteSwitch" checked>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row align-items-center mb-3">
+                        <div class="col-md-10">
+                            <label class="form-label fw-normal mb-0">Confirmação de agendamento</label>
+                            <p class="small text-muted mb-0">Enviar confirmação automática ao paciente</p>
+                        </div>
+                        <div class="col-md-2 d-flex justify-content-end">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch" id="confirmacaoSwitch" checked>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row align-items-center">
+                        <div class="col-md-10">
+                            <label class="form-label fw-normal mb-0">Relatórios diários</label>
+                            <p class="small text-muted mb-0">Receber resumo das consultas do dia</p>
+                        </div>
+                        <div class="col-md-2 d-flex justify-content-end">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch" id="relatoriosSwitch">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <hr class="mb-5">
+
+                <div class="mb-5">
+                    <h5 class="fw-bold mb-3"><i class="bi bi-shield-lock me-2"></i> Segurança</h5>
+                    <form id="segurancaForm">
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <label for="senhaAtual" class="form-label small fw-bold text-muted">Senha Atual</label>
+                                <input type="password" class="form-control bg-light border-0" id="senhaAtual" placeholder="••••••••" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="novaSenha" class="form-label small fw-bold text-muted">Nova Senha</label>
+                                <input type="password" class="form-control bg-light border-0" id="novaSenha" placeholder="Nova Senha" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="confirmarSenha" class="form-label small fw-bold text-muted">Confirmar Nova Senha</label>
+                                <input type="password" class="form-control bg-light border-0" id="confirmarSenha" placeholder="Confirmar Nova Senha" required>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-end mt-4">
+                            <button type="submit" class="btn btn-dark px-4" id="alterarSenha">Alterar Senha</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <hr class="mb-5">
+
+                <div>
+                    <h5 class="fw-bold mb-4"><i class="bi bi-palette me-2"></i> Aparência</h5>
+
+                    <div class="row align-items-center mb-3">
+                        <div class="col-md-10">
+                            <label class="form-label fw-normal mb-0">Modo Escuro</label>
+                            <p class="small text-muted mb-0">Ativar tema escuro da Interface</p>
+                        </div>
+                        <div class="col-md-2 d-flex justify-content-end">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch" id="darkModeSwitch">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row align-items-center mb-3">
+                        <div class="col-md-10">
+                            <label class="form-label fw-normal mb-0">Visualização compacta</label>
+                            <p class="small text-muted mb-0">Reduzir espaçamento entre elementos</p>
+                        </div>
+                        <div class="col-md-2 d-flex justify-content-end">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch" id="compactViewSwitch" checked>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script> 
+</body>
+</html>
