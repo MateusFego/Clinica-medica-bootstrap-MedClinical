@@ -1,76 +1,229 @@
 <!DOCTYPE html>
-<html lang="pt-br" data-bs-theme="dark">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Med Clinical | Login</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="style.css"> 
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Med Clinical</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="landingPage.css">
 </head>
+<body>
 
-<body class="d-flex flex-column min-vh-100">
+  <!-- Header -->
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark border-bottom border-secondary">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <div class="bg-gradient p-2 rounded me-2 text-white">🩺</div>
+        Med Clinical
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav me-3">
+          <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
+          <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+        </ul>
+        <a href="login.html" class="btn btn-outline-primary">Acesso Administrativo</a>
+      </div>
+    </div>
+  </nav>
 
-    <main class="flex-grow-1 d-flex align-items-center justify-content-center">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12 col-sm-10 col-md-8 col-lg-5 col-xl-4 text-center">
-
-                    <div class="mb-5 text-white">
-                        <i class="bi bi-stethoscope fs-1 mb-2 text-white"></i>
-                        <h1 class="h3 mb-0">Med Clinical</h1>
-                        <p class="text-muted">Sistema Administrativo</p>
-                    </div>
-
-                    <div class="card p-4 shadow-lg rounded-3 border-0 bg-white text-dark">
-                        <div class="card-body">
-                            <h2 class="h5 card-title mb-4">Acessar Sistema</h2>
-                            <p class="card-text text-secondary mb-4">Entre com suas credenciais para continuar</p> 
-
-                            <form id="loginForm">
-                                <div class="mb-3 text-start">
-                                    <label for="email" class="form-label visually-hidden">Email</label>
-                                    <div class="input-group">
-                                        <input type="email" class="form-control" id="email" placeholder="seu.email@clinica.com" required>
-                                    </div>
-                                </div>
-                                <div class="mb-3 text-start">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <label for="senha" class="form-label visually-hidden">Senha</label>
-                                        <a href="#" class="link-primary text-decoration-none small" id="forgotPassword">Esqueceu?</a>
-                                    </div>
-                                    <div class="input-group">
-                                        <span class="input-group-text"><i class="bi bi-lock"></i></span>
-                                        <input type="password" class="form-control" id="senha" placeholder="••••••••" required>
-                                    </div>
-                                </div>
-
-                                <div class="d-grid mt-4">
-                                    <button type="submit" class="btn btn-dark btn-lg">Entrar</button>
-                                </div>
-                            </form>
-
-                            <div id="feedbackMessage" class="alert mt-3 d-none" role="alert"></div>
-
-                            <div class="alert alert-info-subtle text-start p-3 mt-4" role="alert">
-                                <strong>Credenciais de demonstração:</strong>
-                                <p class="mb-0 small">Email: **admin@clinica.com**</p>
-                                <p class="mb-0 small">Senha: **admin123**</p>
-                            </div>
-
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
+  <!-- Hero -->
+  <section id="inicio" class="hero text-light">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 mb-4 mb-md-0">
+          <span class="badge bg-primary bg-opacity-25 text-primary mb-3">Cuidando da sua saúde com excelência</span>
+          <h1 class="display-4 fw-bold mb-3">Saúde e Bem-Estar em Primeiro Lugar</h1>
+          <p class="text-secondary mb-4">
+            A Med Clinical oferece atendimento médico de qualidade com profissionais especializados e equipamentos modernos para cuidar de você e sua família.
+          </p>
+          <div class="d-flex gap-3 flex-wrap">
+            <a href="#" class="btn bg-gradient text-white px-4 py-2">💬 Agendar via WhatsApp</a>
+            <a href="#contato" class="btn bg-gradient text-white px-4 py-2">Saiba Mais</a>
+          </div>
         </div>
-    </main>
+        <div class="col-md-6">
+          <img src="https://images.unsplash.com/photo-1758691461888-b74515208d7a?crop=entropy&fit=max&q=80&w=1080"
+            alt="Clínica moderna" class="img-fluid rounded shadow">
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <footer class="text-center mt-5 mb-3 text-muted">
-        &copy; 2025 Clínica Médica. Todos os direitos reservados.
-    </footer>
+  <!-- Serviços -->
+  <section id="servicos" class="py-5 bg-section">
+    <div class="container text-center">
+      <h2 class="text-light mb-3">Nossos Serviços</h2>
+      <p class="text-secondary mb-5">Oferecemos uma ampla gama de serviços médicos com equipamentos modernos e profissionais qualificados.</p>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card bg-dark border-secondary h-100 text-start p-4">
+            <div class="bg-gradient text-white d-inline-flex align-items-center justify-content-center rounded mb-3" style="width:56px;height:56px;">🩺</div>
+            <h4 class="text-white">Consultas Médicas</h4>
+            <p class="text-secondary">Atendimento com médicos especialistas em diversas áreas da medicina.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card bg-dark border-secondary h-100 text-start p-4">
+            <div class="bg-gradient text-white d-inline-flex align-items-center justify-content-center rounded mb-3" style="width:56px;height:56px;">❤️</div>
+            <h4 class="text-white">Exames Clínicos</h4>
+            <p class="text-secondary">Laboratório completo com resultados rápidos e precisos.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card bg-dark border-secondary h-100 text-start p-4">
+            <div class="bg-gradient text-white d-inline-flex align-items-center justify-content-center rounded mb-3" style="width:56px;height:56px;">📅</div>
+            <h4 class="text-white">Agendamento Fácil</h4>
+            <p class="text-secondary">Agende sua consulta de forma prática pelo WhatsApp.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script> </body>
+  <!-- Sobre -->
+  <section id="sobre" class="py-5">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-md-6">
+          <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?crop=entropy&fit=max&q=80&w=1080"
+            alt="Equipe médica" class="img-fluid rounded shadow">
+        </div>
+        <div class="col-md-6">
+          <h2 class="text-light mb-4">Sobre a Med Clinical</h2>
+          <p class="text-secondary">Com anos de experiência, a Med Clinical se destaca pela excelência no atendimento e compromisso com o bem-estar dos pacientes.</p>
+          <p class="text-secondary mb-4">Nossa equipe é formada por profissionais altamente qualificados e dedicados a oferecer o melhor tratamento.</p>
+          <div class="row">
+            <div class="col-6 mb-3">
+              <div class="d-flex align-items-center">
+                <div class="bg-primary bg-opacity-25 rounded p-3 me-3">👨‍⚕️</div>
+                <div>
+                  <h5 class="text-light mb-0">50+</h5>
+                  <small class="text-secondary">Profissionais</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 mb-3">
+              <div class="d-flex align-items-center">
+                <div class="bg-primary bg-opacity-25 rounded p-3 me-3">❤️</div>
+                <div>
+                  <h5 class="text-light mb-0">10k+</h5>
+                  <small class="text-secondary">Pacientes</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contato" class="py-5 bg-section">
+    <div class="container text-center mb-5">
+      <h2 class="text-light mb-3">Entre em Contato</h2>
+      <p class="text-secondary">Estamos prontos para atender você. Entre em contato conosco ou visite nossa clínica.</p>
+    </div>
+
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="card bg-dark border-secondary mb-3 p-3 text-start">
+            <div class="d-flex">
+              <div class="bg-gradient text-white rounded d-flex align-items-center justify-content-center me-3" style="width:48px;height:48px;">📍</div>
+              <div>
+                <h5 class="text-light mb-1">Endereço</h5>
+                <p class="text-secondary mb-0">Rua da Saúde, 123 - Centro<br>São Paulo, SP - CEP 01000-000</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card bg-dark border-secondary mb-3 p-3 text-start">
+            <div class="d-flex">
+              <div class="bg-gradient text-white rounded d-flex align-items-center justify-content-center me-3" style="width:48px;height:48px;">📞</div>
+              <div>
+                <h5 class="text-light mb-1">Telefone</h5>
+                <p class="text-secondary mb-0">(11) 9999-9999<br>(11) 3333-3333</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card bg-dark border-secondary mb-3 p-3 text-start">
+            <div class="d-flex">
+              <div class="bg-gradient text-white rounded d-flex align-items-center justify-content-center me-3" style="width:48px;height:48px;">⏰</div>
+              <div>
+                <h5 class="text-light mb-1">Horário</h5>
+                <p class="text-secondary mb-0">Segunda a Sexta: 8h às 18h<br>Sábado: 8h às 12h</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 text-center">
+          <div class="card bg-dark border-primary p-5">
+            <div class="bg-gradient text-white rounded-circle mx-auto d-flex align-items-center justify-content-center mb-3" style="width:80px;height:80px;font-size:2rem;">💬</div>
+            <h3 class="text-light mb-3">Agende pelo WhatsApp</h3>
+            <p class="text-secondary mb-4">Entre em contato conosco pelo WhatsApp e agende sua consulta de forma rápida e fácil.</p>
+            <a href="https://wa.me/5511999999999" target="_blank" class="btn bg-gradient text-white w-100 py-2">💬 Abrir WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-5 text-secondary">
+    <div class="container">
+      <div class="row g-4 mb-4">
+        <div class="col-md-3">
+          <div class="d-flex align-items-center mb-3">
+            <div class="bg-gradient p-2 rounded me-2 text-white">🩺</div>
+            <span class="text-white fs-5">Med Clinical</span>
+          </div>
+          <p>Cuidando da sua saúde com excelência e dedicação.</p>
+        </div>
+        <div class="col-md-3">
+          <h5 class="text-white mb-3">Navegação</h5>
+          <ul class="list-unstyled">
+            <li><a href="#inicio" class="text-secondary text-decoration-none">Início</a></li>
+            <li><a href="#servicos" class="text-secondary text-decoration-none">Serviços</a></li>
+            <li><a href="#sobre" class="text-secondary text-decoration-none">Sobre</a></li>
+            <li><a href="#contato" class="text-secondary text-decoration-none">Contato</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5 class="text-white mb-3">Serviços</h5>
+          <ul class="list-unstyled">
+            <li>Consultas Médicas</li>
+            <li>Exames Clínicos</li>
+            <li>Check-up</li>
+            <li>Vacinas</li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5 class="text-white mb-3">Contato</h5>
+          <ul class="list-unstyled">
+            <li>(11) 9999-9999</li>
+            <li>contato@medclinical.com.br</li>
+            <li>São Paulo, SP</li>
+          </ul>
+        </div>
+      </div>
+      <hr class="border-secondary" />
+      <div class="text-center">
+        <small>&copy; 2025 Med Clinical. Todos os direitos reservados.</small>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="landingPage.js"></script>
+</body>
 </html>

@@ -1,0 +1,22 @@
+body {
+    background-color: #0f172a;
+    color: #ccc;
+}
+.hero {
+    padding-top: 8rem;
+    padding-bottom: 5rem;
+}
+.bg-gradient {
+    background:#3b82f6;
+}
+
+.bg-gradient:hover {
+    background: #2563eb;
+}
+
+.bg-section {
+    background-color: rgba(31, 41, 55, 0.5);
+}
+footer {
+    background-color: #020617;
+}
